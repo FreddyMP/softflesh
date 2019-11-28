@@ -13,7 +13,7 @@ def create_bussines(nombre_empresa):
         print ("Error")
 
 
-def registrar(nombre, rnc, direccion, telefono, correo, encargado):
+def registrar(nombre, rnc, provincia, direccion, telefono, correo, encargado):
     try:
         data = con.conexion.cursor()
         data.execute(f"use {nombre}")
@@ -33,6 +33,4 @@ def create_user(db, nombre, password):
     except ():
         print("no funciono la insert")
 
-print (create_bussines('SoftFlesh'))
-print(registrar('SoftFlesh','RDF22222152','Santo Domingo', 'Calle SAntiago Rodriguez', '809-536-4833', 'Freddypimpns@gmail.com', 'Freddy Pimpns'))
-print(create_user('SoftFlesh','Freddy','Freddy0770'))
+
