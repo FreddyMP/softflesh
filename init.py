@@ -17,7 +17,11 @@ def create_db():
     print(model.create_user('SoftFlesh','Freddy','Freddy0770'))
     print(paquete['nombre'])
     return jsonify(paquete)
-   
+@app.after_request
+def add_headers(response):
+    response.headers.add("Access-Control-allow-origin", '*')
+    response.headers.add("Access-Control-allow-Headers", 'Content-Type,Autorization')
+    return response
 if __name__ == '__main__':
     app.run(debug=True)
     
